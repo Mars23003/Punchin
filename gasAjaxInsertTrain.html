@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>    $(document).ready(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    url: "https://script.google.com/macros/s/AKfycbwjMptMKI3womQJT337U8YXGKFRrfojrKeLRRKtfkHaZfOMXC8/exec",   //後端的URL
+                    type: "POST",   //用POST的方式
+                    dataType: "json",   //response的資料格式
+                    cache: false,   //是否暫存
+                    data: {
+                        "method": "write",
+                        "email": "123@yahoo.com",
+                        "name": "Wayne",
+                        "pwd": "123",
+                        "identity": "老師",
+                        "phone": "0912345678"
+                    }, //傳送給後端的資料
+                    success: function (response) {
+                        console.log(response);  //成功後回傳的資料
+
+                    }
+                })
+            })
+        })</script>
+</head>
+
+<body>
+    <button id=btn>A</button>
+</body>
+
+</html>
