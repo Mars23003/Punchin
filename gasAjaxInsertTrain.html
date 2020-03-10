@@ -5,33 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
     <script>    $(document).ready(function () {
             $("#btn").click(function () {
+                var inputEmail = $('#inputEmail').val();
+                var inputName = $('#inputName').val();
+                var inputPassword1 = $('#inputPassword1').val();
+                var inputphone = $('#inputphone').val();
+
+                phone = /^09\d{8}$/;
+                submitOK = "true";
+
+                if (!phone.test(inputPhone)) {
+                    alert("手機格式錯誤！");
+                    submitOK = "false";
+                }
                 $.ajax({
                     url: "https://script.google.com/macros/s/AKfycbwjMptMKI3womQJT337U8YXGKFRrfojrKeLRRKtfkHaZfOMXC8/exec",   //後端的URL
                     type: "POST",   //用POST的方式
                     dataType: "json",   //response的資料格式
                     cache: false,   //是否暫存
+                    // async: false,   //改回同步
                     data: {
                         "method": "write",
-                        "email": "123@yahoo.com",
-                        "name": "Wayne",
-                        "pwd": "123",
+                        "email": inputemail,
+                        "name": inputname,
+                        "pwd": inputpwd,
                         "identity": "老師",
-                        "phone": "0912345678"
+                        "phone": inputphone
                     }, //傳送給後端的資料
+                    //成功後回傳的資料
                     success: function (response) {
-                        console.log(response);  //成功後回傳的資料
-
+                        alert = "成功註冊"
+                        // console.log(response);  //成功後回傳的資料
                     }
                 })
+                // console.log(data)
             })
         })</script>
 </head>
 
 <body>
-    <button id=btn>A</button>
+    <form class="was-validated">
+        <div class=" form-group">
+            <label for="inputEmail"> E-mail </label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="請輸入E-mail" required />
+        </div>
+        <div class="form-group">
+            <label for="inputName"> 帳號名稱 </label>
+            <input type="text" class="form-control" id="inputName" placeholder="請輸入帳戶名稱" required />
+        </div>
+        <div class="form-group">
+            <label for="inputPassword1"> 密碼 </label>
+            <input type="password" class="form-control" id="inputPassword1" placeholder="請輸入密碼" required />
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">手機號碼</label>
+            <input type="text" class="form-control" id="inputphone" placeholder="請輸入手機號碼" />
+        </div>
+        <div class="form-group"></div>
+        <button class="btn btn-primary float-right" id="btn">
+            提交
+        </button>
+    </form>
 </body>
 
 </html>
