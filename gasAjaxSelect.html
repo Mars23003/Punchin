@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>    $(document).ready(function () {
+            $("#btn").click(function () {
+                $.ajax({
+                    type: "POST",
+                    data: {
+                        "method": "read",
+                        "query": "Mary"
+                    },
+                    url: "https://script.google.com/macros/s/AKfycbwjMptMKI3womQJT337U8YXGKFRrfojrKeLRRKtfkHaZfOMXC8/exec",
+                    // 填入網路應用程式網址
+                    success: function (e) {
+                        alert(e);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">1</button>
+</body>
+
+</html>

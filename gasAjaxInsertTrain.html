@@ -15,34 +15,26 @@
                 var inputPassword1 = $('#inputPassword1').val();
                 var inputphone = $('#inputphone').val();
 
-                phone = /^09\d{8}$/;
-                submitOK = "true";
+                // $.ajax({
+                //     url: "https://script.google.com/macros/s/AKfycbwjMptMKI3womQJT337U8YXGKFRrfojrKeLRRKtfkHaZfOMXC8/exec",   //後端的URL
+                //     type: "POST",   //用POST的方式
+                //     dataType: "json",   //response的資料格式
+                //     cache: false,   //是否暫存
+                //     // async: false,   //改回同步
+                //     data: {
+                //         "method": "write",
+                //         "email": inputemail,
+                //         "name": inputname,
+                //         "pwd": inputpwd,
+                //         "identity": "老師",
+                //         "phone": inputphone
+                //     }, //傳送給後端的資料
+                //     //成功後回傳的資料
+                //     success: function (response) {
+                //         alert = "成功註冊"
+                //     }
+                // })
 
-                if (!phone.test(inputPhone)) {
-                    alert("手機格式錯誤！");
-                    submitOK = "false";
-                }
-                $.ajax({
-                    url: "https://script.google.com/macros/s/AKfycbwjMptMKI3womQJT337U8YXGKFRrfojrKeLRRKtfkHaZfOMXC8/exec",   //後端的URL
-                    type: "POST",   //用POST的方式
-                    dataType: "json",   //response的資料格式
-                    cache: false,   //是否暫存
-                    // async: false,   //改回同步
-                    data: {
-                        "method": "write",
-                        "email": inputemail,
-                        "name": inputname,
-                        "pwd": inputpwd,
-                        "identity": "老師",
-                        "phone": inputphone
-                    }, //傳送給後端的資料
-                    //成功後回傳的資料
-                    success: function (response) {
-                        alert = "成功註冊"
-                        // console.log(response);  //成功後回傳的資料
-                    }
-                })
-                // console.log(data)
             })
         })</script>
 </head>
@@ -64,6 +56,10 @@
         <div class="form-group">
             <label for="inputEmail">手機號碼</label>
             <input type="text" class="form-control" id="inputphone" placeholder="請輸入手機號碼" />
+        </div>
+        <div class="form-group">
+            <label for="seletname">查詢</label>
+            <input type="text" class="form-control" id="seletname"" placeholder=" 請輸入名稱" />
         </div>
         <div class="form-group"></div>
         <button class="btn btn-primary float-right" id="btn">
