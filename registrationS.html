@@ -1,112 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>雲端打卡系統</title>
-    <meta name="description" content="這是個好東西" />
-    <meta name="author" content="MarsLin" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
 
-    <script>
-      function checkID() {
-        var inputPhone = document.getElementById("inputphone");
-        phone = /^09\d{8}$/;
-        submitOK = "true";
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>雲端打卡系統</title>
+  <meta name="description" content="這是個好東西" />
+  <meta name="author" content="MarsLin" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
 
-        if (!phone.test(inputPhone)) {
-          alert("手機格式錯誤！");
-          submitOK = "false";
-        }
+  <script>
+    function checkID() {
+      var inputPhone = document.getElementById("inputphone");
+      phone = /^09\d{8}$/;
+      submitOK = "true";
 
-        if (submitOK == "false") {
-          return false;
-        }
+      if (phone.test(inputPhone)) {
+        alert("手機格式錯誤！");
+        submitOK = "false";
       }
-    </script>
-  </head>
 
-  <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-          <hr style="margin: 3em 0;" />
-          <h1 class="text-center">
-            凱莉豆格家教中心
-          </h1>
-          <hr style="margin: 3em 0;" />
-          <img
-            alt="這裡有張圖片"
-            title="沒看過柯基喔"
-            src="img/corgi.jpg"
-            class="img-fluid rounded-circle mx-auto d-block "
-          />
-          <hr style="margin: 1em 0;" />
-          <!--會員註冊-->
-          <form method="post" class="was-validated" onsubmit="return checkID()">
-            <div class="form-group">
-              <label for="inputEmail"> E-mail </label>
-              <input
-                type="email"
-                class="form-control"
-                id="inputEmail"
-                placeholder="請輸入E-mail"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputName"> 帳號名稱 </label>
-              <input
-                type="text"
-                class="form-control"
-                id="inputName"
-                placeholder="請輸入帳戶名稱"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputPassword1"> 密碼 </label>
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword1"
-                placeholder="請輸入密碼"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputPassword2"> 確認密碼 </label>
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword2"
-                placeholder="請確認密碼"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="inputEmail">手機號碼</label>
-              <input
-                type="text"
-                class="form-control"
-                id="inputphone"
-                placeholder="請輸入手機號碼"
-              />
-            </div>
-            <div class="form-group"></div>
-            <button type="submit" class="btn btn-primary float-right">
-              提交
-            </button>
-          </form>
-        </div>
-        <div class="col-md-4"></div>
+      if (submitOK == "false") {
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <hr style="margin: 3em 0;" />
+        <h1 class="text-center">
+          凱莉豆格家教中心
+        </h1>
+        <hr style="margin: 3em 0;" />
+        <img alt="這裡有張圖片" title="沒看過柯基喔" src="img/corgi.jpg" class="img-fluid rounded-circle mx-auto d-block " />
+        <hr style="margin: 1em 0;" />
+        <!--會員註冊-->
+        <form method="post" class="was-validated" onsubmit="return checkID()">
+          <div class="form-group">
+            <label for="inputEmail"> E-mail </label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="請輸入E-mail" required />
+          </div>
+          <div class="form-group">
+            <label for="inputName"> 帳號名稱 </label>
+            <input type="text" class="form-control" id="inputName" placeholder="請輸入帳戶名稱" required />
+          </div>
+          <div class="form-group">
+            <label for="inputPassword1"> 密碼 </label>
+            <input type="password" class="form-control" id="inputPassword1" placeholder="請輸入密碼" required />
+          </div>
+          <div class="form-group">
+            <label for="inputPassword2"> 確認密碼 </label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="請確認密碼" required />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">手機號碼</label>
+            <input type="text" class="form-control" id="inputphone" placeholder="請輸入手機號碼" />
+          </div>
+          <div class="form-group"></div>
+          <button type="submit" class="btn btn-primary float-right">
+            提交
+          </button>
+        </form>
       </div>
+      <div class="col-md-4"></div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
 </html>
