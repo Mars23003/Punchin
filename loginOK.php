@@ -1,3 +1,10 @@
+<?php session_start(); ?>
+<?php 
+    if($_SESSION['LoginSuccess'] != true){
+       echo "<h1 style='color:red;'>尚未登入，請登入</h1>";
+       echo "<p><a href='Login.php'>回到登入畫面</a></p>"; 
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,28 +34,7 @@
                 <hr style="margin: 3em 0;" />
                 <img alt="這裡有張圖片" title="沒看過柯基喔" src="img/corgi.png" class="img-fluid  mx-auto d-block " width=50%>
                 <hr style="margin: 1em 0;" />
-                <!--會員登入-->
-                <form method="post" action="login.php">
-                    <div class="form-group">
-                        <label for="inputEmail">
-                            E-mail
-                        </label>
-                        <input type="email" class="form-control"name="nemail" id="Email" >
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword">
-                            Password
-                        </label>
-                        <input type="password" class="form-control" name="npwd" id="Password" >
-                    </div>
-                    <div class="form-group">
-                    </div>
-                    <button type="submit" class="btn btn-primary float-right">
-                        登入
-                    </button>
-                    <a href=registrationT.html class="btn float-right">老師點我註冊</a>
-                    <a href=registrationS.html class="btn float-right">學生點我註冊</a>
-                </form>
+               
             </div>
             <div class="col-md-4">
             </div>

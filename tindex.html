@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>凱莉豆格家教團隊</title>
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dowebok">
+        <div class="logo"></div>
+        <form action=login.php method="POST">
+            <div class="form-item">
+                <input id="username" type="text" placeholder="E-mail">
+                <p class="tip">請輸入信箱</p>
+            </div>
+            <div class="form-item">
+                <input id="password" type="password" placeholder="password">
+                <p class="tip">E-mail或密碼不正確</p>
+            </div>
+            <div class="form-item"><button type="submit" id="btn">登 入</button></div>
+            <div class="reg-bar">
+                <a class="reg" href="registrationT.html">老師註冊&nbsp;&nbsp;</a>
+                <a class="reg" href="registrationS.html">學生註冊</a>
+            </div>
+        </form>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('input').val('')
+                $('#submit').on('click', function () {
+                    $('.tip').show()
+                })
+            })
+        </script>
+        <script>    $(document).ready(function () {
+                $("#btn").click(function () {
+
+                })
+            })
+        </script>
+</body>
+
+</html>
