@@ -2,7 +2,7 @@
 <?php
 
 if( !isset($_POST['nemail']) || !isset($_POST['npwd']) || $_POST['nemail']=="" || $_POST['npwd']=="" ){
-//若沒有從Login submit或帳密為空白，就導回Login.php
+//若沒有從Login submit或帳密為空白，就導回index.html
 header("location:index.html");
 }
 else {

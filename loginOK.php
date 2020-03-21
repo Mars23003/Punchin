@@ -1,8 +1,8 @@
 <?php session_start(); ?>
-<?php 
-    if($_SESSION['LoginSuccess'] != true){
+<?php
+    if($_SESSION['loginSuccess'] != true){
        echo "<h1 style='color:red;'>尚未登入，請登入</h1>";
-       echo "<p><a href='Login.php'>回到登入畫面</a></p>"; 
+       echo "<p><a href='Login.php'>回到登入畫面</a></p>";
     }
 ?>
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
                 <hr style="margin: 3em 0;" />
                 <img alt="這裡有張圖片" title="沒看過柯基喔" src="img/corgi.png" class="img-fluid  mx-auto d-block " width=50%>
                 <hr style="margin: 1em 0;" />
-               
+
             </div>
             <div class="col-md-4">
             </div>
